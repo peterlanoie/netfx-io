@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{08FBFF3B-23F7-4437-8448-B7C6315DE4F7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Common.IO.Tests</RootNamespace>
+    <AssemblyName>Common.IO.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FilterTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SyncTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common.IO\Common.IO.csproj">
+      <Project>{8ED81F4E-D08D-41CC-A1B5-574BC8BDC3AB}</Project>
+      <Name>Common.IO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SampleData\DirMirror\file.01" />
+    <None Include="SampleData\DirMirror\file.02" />
+    <None Include="SampleData\DirMirror\file.07.exclude.relative" />
+    <None Include="SampleData\DirMirror\file.08.exclude.global" />
+    <None Include="SampleData\DirMirror\folder.01\folder.02\file.03" />
+    <None Include="SampleData\DirMirror\folder.01\folder.02\file.04" />
+    <None Include="SampleData\DirMirror\folder.01\folder.02\folder.03\file.05" />
+    <None Include="SampleData\DirMirror\folder.01\folder.02\folder.03\file.06" />
+    <None Include="SampleData\DirMirror\folder.04\file.08.exclude.global" />
+    <None Include="SampleData\DirMirror\folder.04\folder.05\file.08.exclude.global" />
+    <None Include="SampleData\DirMirror\folder.04\folder.05\file.09.exclude.relative" />
+    <None Include="SampleData\DirMirror\folder.04\folder.05\file.11" />
+    <None Include="SampleData\DirMirror\folder.06.exclude.relative\file.06" />
+    <None Include="SampleData\DirMirror\folder.09\file.07.exclude.relative" />
+    <None Include="SampleData\DirMirror\folder.10.exclude.global\file.10" />
+    <None Include="SampleData\DirMirror\folder.11\folder.06.exclude.relative\file.06" />
+    <None Include="SampleData\DirMirror\folder.11\folder.10.exclude.global\file.10" />
+    <None Include="SampleData\DirMirror\folder.11\folder.12\file.12" />
+    <None Include="SampleData\DirMirror\folder.11\folder.12\folder.10.exclude.global\file.10" />
+    <None Include="SampleData\DirMirror\folder.11\folder.13\file.13" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
